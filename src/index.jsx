@@ -12,6 +12,8 @@ import postsReducer from './reducers/posts_reducer';
 
 // Import components
 import PostsIndex from './containers/posts_index';
+import PostShow from './containers/post_show';
+import PostNew from "./containers/post_new";
 
 import '../assets/stylesheets/application.scss';
 
@@ -28,6 +30,8 @@ ReactDOM.render(
       <div className="thin-container">
         <Switch>
           <Route path="/" exact component={PostsIndex} />
+          <Route path="/posts/new" exact component={PostNew} />
+          <Route path="/posts/:id" component={PostShow} />
         </Switch>
       </div>
     </Router>
