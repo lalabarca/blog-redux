@@ -22,12 +22,12 @@ export function fetchPost(id) {
   };
 }
 
-export function createPost(body) {
+export function createPost(body, callback) {
   const request = fetch('http://reduxblog.herokuapp.com/api/posts/?key=lala', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify(body)
-  }).then(r => r.json());
+  }).then(r => r.json()).then(callback);
 
   return {
     type: FETCH_POST,
